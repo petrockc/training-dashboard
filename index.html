@@ -423,17 +423,17 @@
         <div class="grid grid-cols-3 mb-6">
           <div class="stats-box">
             <div class="stats-title">Completion Rate</div>
-            <div class="stats-value" id="overall-completion-rate">86.4%</div>
+            <div class="stats-value" id="overall-completion-rate">71.0%</div>
             <div class="stats-subtitle">of required courses completed</div>
           </div>
           <div class="stats-box">
             <div class="stats-title">In Progress</div>
-            <div class="stats-value" id="overall-in-progress">2</div>
+            <div class="stats-value" id="overall-in-progress">4</div>
             <div class="stats-subtitle">courses currently being taken</div>
           </div>
           <div class="stats-box">
             <div class="stats-title">Not Started</div>
-            <div class="stats-value" id="overall-not-started">25</div>
+            <div class="stats-value" id="overall-not-started">56</div>
             <div class="stats-subtitle">courses yet to begin</div>
           </div>
         </div>
@@ -465,8 +465,8 @@
             </thead>
             <tbody>
               <tr>
-                <td>Cary Ellis</td>
-                <td><span class="font-semibold">33</span></td>
+                <td>Chris Petrock</td>
+                <td><span class="font-semibold">35</span></td>
                 <td>
                   <div class="progress-container">
                     <div class="progress-bar progress-good" style="width: 100%;"></div>
@@ -474,8 +474,8 @@
                 </td>
               </tr>
               <tr>
-                <td>Chris Petrock</td>
-                <td><span class="font-semibold">31</span></td>
+                <td>Cary Ellis</td>
+                <td><span class="font-semibold">33</span></td>
                 <td>
                   <div class="progress-container">
                     <div class="progress-bar progress-good" style="width: 94%;"></div>
@@ -487,7 +487,7 @@
                 <td><span class="font-semibold">25</span></td>
                 <td>
                   <div class="progress-container">
-                    <div class="progress-bar progress-good" style="width: 76%;"></div>
+                    <div class="progress-bar progress-good" style="width: 71%;"></div>
                   </div>
                 </td>
               </tr>
@@ -496,7 +496,7 @@
                 <td><span class="font-semibold">24</span></td>
                 <td>
                   <div class="progress-container">
-                    <div class="progress-bar progress-good" style="width: 73%;"></div>
+                    <div class="progress-bar progress-good" style="width: 69%;"></div>
                   </div>
                 </td>
               </tr>
@@ -505,7 +505,7 @@
                 <td><span class="font-semibold">23</span></td>
                 <td>
                   <div class="progress-container">
-                    <div class="progress-bar progress-warning" style="width: 70%;"></div>
+                    <div class="progress-bar progress-warning" style="width: 66%;"></div>
                   </div>
                 </td>
               </tr>
@@ -514,7 +514,7 @@
                 <td><span class="font-semibold">23</span></td>
                 <td>
                   <div class="progress-container">
-                    <div class="progress-bar progress-warning" style="width: 70%;"></div>
+                    <div class="progress-bar progress-warning" style="width: 66%;"></div>
                   </div>
                 </td>
               </tr>
@@ -523,7 +523,7 @@
                 <td><span class="font-semibold">8</span></td>
                 <td>
                   <div class="progress-container">
-                    <div class="progress-bar progress-danger" style="width: 24%;"></div>
+                    <div class="progress-bar progress-danger" style="width: 23%;"></div>
                   </div>
                 </td>
               </tr>
@@ -688,62 +688,6 @@
           name: "Cary Ellis",
           roles: ["Executive", "Process Owner", "Document Control", "Basic User"],
           total: 27,
-          completed: 27,
-          inProgress: 0,
-          notStarted: 0,
-          completionRate: 100.0,
-          incompleteList: []
-        },
-        {
-          name: "Jordan Fields",
-          roles: ["Manager", "Document Control", "Basic User"],  
-          total: 19,
-          completed: 19,
-          inProgress: 0,
-          notStarted: 0,
-          completionRate: 100.0,
-          incompleteList: []
-        },
-        {
-          name: "J.T. Lewis",
-          roles: ["MREP", "Internal Auditor", "Document Control", "Basic User"],
-          total: 28,
-          completed: 25,
-          inProgress: 1,
-          notStarted: 2,
-          completionRate: 89.3,
-          incompleteList: [
-            { course: "00.320 Preparing for your Registrar's Audit", status: "In Progress", lastAccessed: "10/19/2023" },
-            { course: "10.140 Design and Development_9001", status: "Not Started", lastAccessed: null },
-            { course: "100.25 CORE: Working with Document Reports", status: "Not Started", lastAccessed: null }
-          ]
-        },
-        {
-          name: "Chris Petrock",
-          roles: ["MREP", "Internal Auditor", "Process Owner", "Executive", "Document Control", "Basic User"],
-          total: 33,
-          completed: 33,
-          inProgress: 0,
-          notStarted: 0,
-          completionRate: 100.0,
-          incompleteList: []
-        },
-        {
-          name: "Paul Rankin",
-          roles: ["Process Owner", "Executive", "Document Control", "Basic User"],
-          total: 27,
-          completed: 26,
-          inProgress: 0,
-          notStarted: 1,
-          completionRate: 96.3,
-          incompleteList: [
-            { course: "100.25 CORE: Working with Document Reports", status: "Not Started", lastAccessed: null }
-          ]
-        },
-        {
-          name: "Ely Ward",
-          roles: ["Process Owner", "Executive", "Document Control", "Basic User"],
-          total: 27,
           completed: 25,
           inProgress: 0,
           notStarted: 2,
@@ -754,44 +698,120 @@
           ]
         },
         {
+          name: "Jordan Fields",
+          roles: ["Manager", "Document Control", "Basic User"],  
+          total: 19,
+          completed: 16,
+          inProgress: 0,
+          notStarted: 3,
+          completionRate: 84.2,
+          incompleteList: [
+            { course: "100.25 CORE: Working with Document Reports", status: "Not Started", lastAccessed: null },
+            { course: "100.30 CORE: Tips to Staying Organized | Authors & Admins", status: "Not Started", lastAccessed: null },
+            { course: "90.002 Business Impact: ISO 9001 Overview", status: "Not Started", lastAccessed: null }
+          ]
+        },
+        {
+          name: "J.T. Lewis",
+          roles: ["MREP", "Internal Auditor", "Document Control", "Basic User"],
+          total: 28,
+          completed: 22,
+          inProgress: 1,
+          notStarted: 5,
+          completionRate: 89.3,
+          incompleteList: [
+            { course: "00.320 Preparing for your Registrar's Audit", status: "In Progress", lastAccessed: "10/19/2023" },
+            { course: "00.330 Customer Satisfaction (ISO 9001 - AS91009120)", status: "Not Started", lastAccessed: null },
+            { course: "100.25 CORE: Working with Document Reports", status: "Not Started", lastAccessed: null },
+            { course: "100.30 CORE: Tips to Staying Organized | Authors & Admins", status: "Not Started", lastAccessed: null }
+          ]
+        },
+        {
+          name: "Chris Petrock",
+          roles: ["MREP", "Internal Auditor", "Process Owner", "Executive", "Document Control", "Basic User"],
+          total: 33,
+          completed: 31,
+          inProgress: 1,
+          notStarted: 1,
+          completionRate: 93.9,
+          incompleteList: [
+            { course: "90.050 Business Impact: Evaluating Effectiveness", status: "In Progress", lastAccessed: "5/23/2025" },
+            { course: "90.060 Business Impact: Improvement and Maintenance", status: "Not Started", lastAccessed: null }
+          ]
+        },
+        {
+          name: "Paul Rankin",
+          roles: ["Process Owner", "Executive", "Document Control", "Basic User"],
+          total: 27,
+          completed: 8,
+          inProgress: 0,
+          notStarted: 19,
+          completionRate: 29.6,
+          incompleteList: [
+            { course: "100.00 CORE: Just the Basics", status: "Not Started", lastAccessed: null },
+            { course: "10.020 ISO 9001 Introduction", status: "Not Started", lastAccessed: null },
+            { course: "00.040 Risk-Based Thinking", status: "Not Started", lastAccessed: null },
+            { course: "00.100 Measurement Planning", status: "Not Started", lastAccessed: null }
+          ]
+        },
+        {
+          name: "Ely Ward",
+          roles: ["Process Owner", "Executive", "Document Control", "Basic User"],
+          total: 27,
+          completed: 23,
+          inProgress: 0,
+          notStarted: 4,
+          completionRate: 85.1,
+          incompleteList: [
+            { course: "100.25 CORE: Working with Document Reports", status: "Not Started", lastAccessed: null },
+            { course: "100.30 CORE: Tips to Staying Organized | Authors & Admins", status: "Not Started", lastAccessed: null },
+            { course: "90.050 Business Impact: Evaluating Effectiveness ", status: "Not Started", lastAccessed: null },
+            { course: "90.060 Business Impact: Improvement and Maintenance", status: "Not Started", lastAccessed: null }
+          ]
+        },
+        {
           name: "Bill Wyles",
           roles: ["Process Owner", "Executive", "Document Control", "Basic User"],
           total: 27,
-          completed: 26,
+          completed: 22,
           inProgress: 1,
-          notStarted: 0,
+          notStarted: 4,
           completionRate: 96.3,
           incompleteList: [
-            { course: "10.100 Document and Record Control_9001 Addendum", status: "In Progress", lastAccessed: null }
+            { course: "10.100 Document and Record Control_9001 Addendum", status: "In Progress", lastAccessed: null },
+            { course: "00.120 Document and Record Control", status: "Not Started", lastAccessed: null },
+            { course: "90.040 Business Impact: A Culture of Involvement", status: "Not Started", lastAccessed: null },
+            { course: "90.050 Business Impact: Evaluating Effectiveness ", status: "Not Started", lastAccessed: null }
           ]
         }
       ],
       courses: [
         {
           course: "90.002 Business Impact: ISO 9001 Overview",
-          relevantUsers: ["Josh Shackelford"],
+          relevantUsers: ["Josh Shackelford", "Jordan Fields"],
           completionRate: 0.0,
-          completedUsers: 0,
-          totalUsers: 1,
+          completedUsers: 5,
+          totalUsers: 2,
           userStatus: {
-            "Josh Shackelford": { status: "Not Started", lastAccessed: null }
+            "Josh Shackelford": { status: "Not Started", lastAccessed: null },
+            "Jordan Fields": { status: "Not Started", lastAccessed: null }
           }
         },
         {
           course: "00.320 Preparing for your Registrar's Audit",
           relevantUsers: ["J.T. Lewis"],
-          completionRate: 0.0,
-          completedUsers: 0,
-          totalUsers: 1,
+          completionRate: 50.0,
+          completedUsers: 1,
+          totalUsers: 2,
           userStatus: {
             "J.T. Lewis": { status: "In Progress", lastAccessed: "10/19/2023" }
           }
         },
         {
-          course: "10.140 Design and Development_9001",
+          course: "10.280 ISO 9001 Tour",
           relevantUsers: ["J.T. Lewis"],
-          completionRate: 0.0,
-          completedUsers: 0,
+          completionRate: 50.0,
+          completedUsers: 1,
           totalUsers: 1,
           userStatus: {
             "J.T. Lewis": { status: "Not Started", lastAccessed: null }
@@ -799,14 +819,16 @@
         },
         {
           course: "100.25 CORE: Working with Document Reports",
-          relevantUsers: ["Paul Rankin", "Ely Ward", "J.T. Lewis"],
-          completionRate: 0.0,
-          completedUsers: 0,
-          totalUsers: 3,
+          relevantUsers: ["Paul Rankin", "Ely Ward", "J.T. Lewis", "Cary Ellis", "Jordan Fields"],
+          completionRate: 37.5,
+          completedUsers: 3,
+          totalUsers: 8,
           userStatus: {
             "Paul Rankin": { status: "Not Started", lastAccessed: null },
             "Ely Ward": { status: "Not Started", lastAccessed: null },
-            "J.T. Lewis": { status: "Not Started", lastAccessed: null }
+            "J.T. Lewis": { status: "Not Started", lastAccessed: null },
+            "Cary Ellis": { status: "Not Started", lastAccessed: null },
+            "Jordan Fields": { status: "Not Started", lastAccessed: null }
           }
         },
         {
@@ -832,17 +854,17 @@
       ],
       actions: [
         "Josh Shackelford has not started any required training - immediate attention needed (19 courses required)",
-        "J.T. Lewis has 1 course in progress (00.320 Preparing for your Registrar's Audit) and needs to complete 2 more courses",
-        "Paul Rankin needs to complete 100.25 CORE: Working with Document Reports", 
+        "J.T. Lewis has 1 course in progress (00.320 Preparing for your Registrar's Audit) and needs to complete 5 more courses",
+        "Paul Rankin needs to complete 100.25 CORE: Working with Document Reports and several other courses", 
         "Ely Ward needs to complete 2 CORE courses: Working with Document Reports and Tips to Staying Organized",
         "Bill Wyles has 1 course in progress - follow up on 10.100 Document and Record Control_9001 Addendum"
       ],
       overallStats: {
-        totalCourses: 199,
-        totalCompleted: 172,
-        totalInProgress: 2,
-        totalNotStarted: 25,
-        completionRate: 86.4
+        totalCourses: 207,
+        totalCompleted: 147,
+        totalInProgress: 4,
+        totalNotStarted: 56,
+        completionRate: 71.0
       }
     };
     

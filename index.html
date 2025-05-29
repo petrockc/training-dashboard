@@ -423,7 +423,7 @@
         <div class="grid grid-cols-3 mb-6">
           <div class="stats-box">
             <div class="stats-title">Completion Rate</div>
-            <div class="stats-value" id="overall-completion-rate">81.6%</div>
+            <div class="stats-value" id="overall-completion-rate">82.6%</div>
             <div class="stats-subtitle">of required courses completed</div>
           </div>
           <div class="stats-box">
@@ -433,7 +433,7 @@
           </div>
           <div class="stats-box">
             <div class="stats-title">Not Started</div>
-            <div class="stats-value" id="overall-not-started">33</div>
+            <div class="stats-value" id="overall-not-started">31</div>
             <div class="stats-subtitle">courses yet to begin</div>
           </div>
         </div>
@@ -460,7 +460,7 @@
               <tr>
                 <th>Name</th>
                 <th>Total Course Completions</th>
-                <th>Required Course Completion Bar</th>
+                <th>Completion Bar</th>
               </tr>
             </thead>
             <tbody>
@@ -492,11 +492,20 @@
                 </td>
               </tr>
               <tr>
+                <td>J.T. Lewis</td>
+                <td><span class="font-semibold">29</span></td>
+                <td>
+                  <div class="progress-container">
+                    <div class="progress-bar progress-good" style="width: 100%;"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
                 <td>Bill Wyles</td>
                 <td><span class="font-semibold">27</span></td>
                 <td>
                   <div class="progress-container">
-                    <div class="progress-bar progress-good" style="width: 81%;"></div>
+                    <div class="progress-bar progress-good" style="width: 93%;"></div>
                   </div>
                 </td>
               </tr>
@@ -506,15 +515,6 @@
                 <td>
                   <div class="progress-container">
                     <div class="progress-bar progress-good" style="width: 84%;"></div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>J.T. Lewis</td>
-                <td><span class="font-semibold">29</span></td>
-                <td>
-                  <div class="progress-container">
-                    <div class="progress-bar progress-warning" style="width: 100%;"></div>
                   </div>
                 </td>
               </tr>
@@ -805,38 +805,35 @@
         },
         {
           course: "100.25 CORE: Working with Document Reports",
-          relevantUsers: ["Paul Rankin", "J.T. Lewis", "Cary Ellis", "Jordan Fields"],
-          completionRate: 37.5,
-          completedUsers: 3,
+          relevantUsers: ["Paul Rankin", "Cary Ellis", "Jordan Fields"],
+          completionRate: 62.5,
+          completedUsers: 5,
           totalUsers: 8,
           userStatus: {
             "Paul Rankin": { status: "Not Started", lastAccessed: null },
-            "J.T. Lewis": { status: "Not Started", lastAccessed: null },
             "Cary Ellis": { status: "Not Started", lastAccessed: null },
             "Jordan Fields": { status: "Not Started", lastAccessed: null }
           }
         },
         {
           course: "100.30 CORE: Tips to Staying Organized | Authors & Admins",
-          relevantUsers: ["Josh Shackelford", "J.T. Lewis", "Jordan Fields", "Cary Ellis"],
-          completionRate: 37.5,
-          completedUsers: 3,
+          relevantUsers: ["Josh Shackelford", "Jordan Fields", "Cary Ellis"],
+          completionRate: 62.5,
+          completedUsers: 5,
           totalUsers: 8,
           userStatus: {
             "Josh Shackelford": { status: "Not Started", lastAccessed: null },
-            "J.T. Lewis": { status: "Not Started", lastAccessed: null },
             "Jordan Fields": { status: "Not Started", lastAccessed: null },
             "Cary Ellis": { status: "Not Started", lastAccessed: null }
           }
         },
         {
           course: "90.060 Business Impact: Improvement and Maintenance",
-          relevantUsers: ["Bill Wyles", "Paul Rankin"],
-          completionRate: 60.0,
-          completedUsers: 3,
+          relevantUsers: ["Paul Rankin"],
+          completionRate: 80.0,
+          completedUsers: 4,
           totalUsers: 5,
           userStatus: {
-            "Bill Wyles": { status: "Not Started", lastAccessed: null },
             "Paul Rankin": { status: "Not Started", lastAccessed: null }   
           }
         }
@@ -844,15 +841,14 @@
       actions: [
         "Josh Shackelford has completed 7 courses - immediate attention needed (12 more courses required)",
         "Paul Rankin needs to complete 100.25 CORE: Working with Document Reports and multiple other courses",
-        "Jordan Fields has 1 course in progress (90.002 Business Impact: ISO 9001 Overview) and needs to complete two other courses",
-        "Bill Wyles has 2 courses remaining, inlcuding 90.050 Business Impact: Evaluating Effectiveness"
+        "Jordan Fields has 1 course in progress (90.002 Business Impact: ISO 9001 Overview) and needs to complete two other courses"
       ],
       overallStats: {
         totalCourses: 207,
-        totalCompleted: 169,
+        totalCompleted: 171,
         totalInProgress: 5,
-        totalNotStarted: 33,
-        completionRate: 81.6
+        totalNotStarted: 31,
+        completionRate: 82.6
       }
     };
     
@@ -905,7 +901,7 @@
               text: 'Overall Training Status'
             }
           },
-          cutout: '82%'
+          cutout: '70%'
         }
       });
     }

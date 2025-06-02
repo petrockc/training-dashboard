@@ -412,7 +412,7 @@
   <div class="container">
     <header class="mb-6">
       <h1>CORE Learning Center Dashboard</h1>
-      <p>Updated on May 29, 2025</p>
+      <p>Updated on June 2, 2025</p>
     </header>
     
     <div class="card mb-6">
@@ -423,17 +423,17 @@
         <div class="grid grid-cols-3 mb-6">
           <div class="stats-box">
             <div class="stats-title">Completion Rate</div>
-            <div class="stats-value" id="overall-completion-rate">82.6%</div>
+            <div class="stats-value" id="overall-completion-rate">85.0%</div>
             <div class="stats-subtitle">of required courses completed</div>
           </div>
           <div class="stats-box">
             <div class="stats-title">In Progress</div>
-            <div class="stats-value" id="overall-in-progress">5</div>
+            <div class="stats-value" id="overall-in-progress">1</div>
             <div class="stats-subtitle">courses currently being taken</div>
           </div>
           <div class="stats-box">
             <div class="stats-title">Not Started</div>
-            <div class="stats-value" id="overall-not-started">31</div>
+            <div class="stats-value" id="overall-not-started">30</div>
             <div class="stats-subtitle">courses yet to begin</div>
           </div>
         </div>
@@ -475,10 +475,10 @@
               </tr>
               <tr>
                 <td>Cary Ellis</td>
-                <td><span class="font-semibold">33</span></td>
+                <td><span class="font-semibold">35</span></td>
                 <td>
                   <div class="progress-container">
-                    <div class="progress-bar progress-good" style="width: 93%;"></div>
+                    <div class="progress-bar progress-good" style="width: 100%;"></div>
                   </div>
                 </td>
               </tr>
@@ -511,10 +511,10 @@
               </tr>
               <tr>
                 <td>Jordan Fields</td>
-                <td><span class="font-semibold">23</span></td>
+                <td><span class="font-semibold">29</span></td>
                 <td>
                   <div class="progress-container">
-                    <div class="progress-bar progress-good" style="width: 84%;"></div>
+                    <div class="progress-bar progress-good" style="width: 100%;"></div>
                   </div>
                 </td>
               </tr>
@@ -689,28 +689,21 @@
           name: "Cary Ellis",
           roles: ["Executive", "Process Owner", "Document Control", "Basic User"],
           total: 27,
-          completed: 25,
+          completed: 27,
           inProgress: 0,
-          notStarted: 2,
-          completionRate: 92.6,
-          incompleteList: [
-            { course: "100.25 CORE: Working with Document Reports", status: "Not Started", lastAccessed: null },
-            { course: "100.30 CORE: Tips to Staying Organized | Authors & Admins", status: "Not Started", lastAccessed: null }
-          ]
+          notStarted: 0,
+          completionRate: 100,
+          incompleteList: []
         },
         {
           name: "Jordan Fields",
           roles: ["Manager", "Document Control", "Basic User"],  
           total: 19,
-          completed: 16,
-          inProgress: 1,
-          notStarted: 2,
-          completionRate: 84.2,
-          incompleteList: [
-            { course: "100.25 CORE: Working with Document Reports", status: "Not Started", lastAccessed: null },
-            { course: "100.30 CORE: Tips to Staying Organized | Authors & Admins", status: "Not Started", lastAccessed: null },
-            { course: "90.002 Business Impact: ISO 9001 Overview", status: "Not Started", lastAccessed: null }
-          ]
+          completed: 19,
+          inProgress: 0,
+          notStarted: 0,
+          completionRate: 100,
+          incompleteList: []
         },
         {
           name: "J.T. Lewis",
@@ -771,13 +764,12 @@
       courses: [
         {
           course: "90.002 Business Impact: ISO 9001 Overview",
-          relevantUsers: ["Josh Shackelford", "Jordan Fields"],
-          completionRate: 75.0,
-          completedUsers: 6,
+          relevantUsers: ["Josh Shackelford"],
+          completionRate: 87.5,
+          completedUsers: 7,
           totalUsers: 8,
           userStatus: {
-            "Josh Shackelford": { status: "Not Started", lastAccessed: null },
-            "Jordan Fields": { status: "Not Started", lastAccessed: null }
+            "Josh Shackelford": { status: "Not Started", lastAccessed: null }
           }
         },
         {
@@ -802,26 +794,22 @@
         },
         {
           course: "100.25 CORE: Working with Document Reports",
-          relevantUsers: ["Paul Rankin", "Cary Ellis", "Jordan Fields"],
-          completionRate: 62.5,
-          completedUsers: 5,
+          relevantUsers: ["Paul Rankin"],
+          completionRate: 87.5,
+          completedUsers: 7,
           totalUsers: 8,
           userStatus: {
-            "Paul Rankin": { status: "Not Started", lastAccessed: null },
-            "Cary Ellis": { status: "Not Started", lastAccessed: null },
-            "Jordan Fields": { status: "Not Started", lastAccessed: null }
+            "Paul Rankin": { status: "Not Started", lastAccessed: null }
           }
         },
         {
           course: "100.30 CORE: Tips to Staying Organized | Authors & Admins",
-          relevantUsers: ["Josh Shackelford", "Jordan Fields", "Cary Ellis"],
-          completionRate: 62.5,
-          completedUsers: 5,
+          relevantUsers: ["Josh Shackelford"],
+          completionRate: 87.5,
+          completedUsers: 7,
           totalUsers: 8,
           userStatus: {
-            "Josh Shackelford": { status: "Not Started", lastAccessed: null },
-            "Jordan Fields": { status: "Not Started", lastAccessed: null },
-            "Cary Ellis": { status: "Not Started", lastAccessed: null }
+            "Josh Shackelford": { status: "Not Started", lastAccessed: null }
           }
         },
         {
@@ -836,17 +824,15 @@
         }
       ],
       actions: [
-        "Josh Shackelford has completed 7 of 19 courses",
-        "Paul Rankin has completed 8 of 27 courses",
-        "Jordan Fields has 1 course in progress (90.002 Business Impact: ISO 9001 Overview) and needs to complete two additional courses",
-        "Cary Ellis needs to complete two additional courses, including 100.25 CORE: Working with Document Reports"
+        "Josh Shackelford has completed 7 of 19 courses - 12 remaining",
+        "Paul Rankin has completed 8 of 27 courses - 19 remaining"
       ],
       overallStats: {
         totalCourses: 207,
-        totalCompleted: 171,
-        totalInProgress: 5,
-        totalNotStarted: 31,
-        completionRate: 82.6
+        totalCompleted: 176,
+        totalInProgress: 1,
+        totalNotStarted: 30,
+        completionRate: 85.0
       }
     };
     

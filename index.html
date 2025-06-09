@@ -465,7 +465,7 @@
             </thead>
             <tbody>
               <tr>
-                <td>Chris P.</td>
+                <td>Chris</td>
                 <td><span class="font-semibold">36</span></td>
                 <td>
                   <div class="progress-container">
@@ -474,7 +474,7 @@
                 </td>
               </tr>
               <tr>
-                <td>Cary E.</td>
+                <td>Cary</td>
                 <td><span class="font-semibold">35</span></td>
                 <td>
                   <div class="progress-container">
@@ -483,7 +483,7 @@
                 </td>
               </tr>
               <tr>
-                <td>Ely W.</td>
+                <td>Ely</td>
                 <td><span class="font-semibold">29</span></td>
                 <td>
                   <div class="progress-container">
@@ -492,7 +492,7 @@
                 </td>
               </tr>
               <tr>
-                <td>J.T. L.</td>
+                <td>J.T.</td>
                 <td><span class="font-semibold">29</span></td>
                 <td>
                   <div class="progress-container">
@@ -501,7 +501,7 @@
                 </td>
               </tr>
               <tr>
-                <td>Bill W.</td>
+                <td>Bill</td>
                 <td><span class="font-semibold">29</span></td>
                 <td>
                   <div class="progress-container">
@@ -510,11 +510,20 @@
                 </td>
               </tr>
               <tr>
-                <td>Jordan F.</td>
+                <td>Jordan</td>
                 <td><span class="font-semibold">29</span></td>
                 <td>
                   <div class="progress-container">
                     <div class="progress-bar progress-good" style="width: 100%;"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Josh S.</td>
+                <td><span class="font-semibold">17</span></td>
+                <td>
+                  <div class="progress-container">
+                    <div class="progress-bar progress-warning" style="width: 89%;"></div>
                   </div>
                 </td>
               </tr>
@@ -526,21 +535,12 @@
                     <div class="progress-bar progress-danger" style="width: 30%;"></div>
                   </div>
                 </td>
-              </tr>
-              <tr>
-                <td>Josh S.</td>
-                <td><span class="font-semibold">17</span></td>
-                <td>
-                  <div class="progress-container">
-                    <div class="progress-bar progress-danger" style="width: 89%;"></div>
-                  </div>
-                </td>
-              </tr>
+              </tr>              
             </tbody>
           </table>
         </div>
         <div class="text-sm text-gray mt-4">
-          <p><strong>Note:</strong> This shows the total number of unique courses completed by each user, regardless of whether they are required for their specific role.</p>
+          <p><strong>Note:</strong> This shows the total number of unique courses completed by each user, regardless of whether they are required for their specific role(s).</p>
         </div>
       </div>
     </div>
@@ -671,7 +671,7 @@
     const dashboardData = {
       users: [
         {
-          name: "Josh S.",
+          name: "Josh",
           roles: ["Manager", "Document Control", "Basic User"],
           total: 19,
           completed: 16,
@@ -685,7 +685,7 @@
           ]
         },
         {
-          name: "Cary E.",
+          name: "Cary",
           roles: ["Executive", "Process Owner", "Document Control", "Basic User"],
           total: 27,
           completed: 27,
@@ -695,7 +695,7 @@
           incompleteList: []
         },
         {
-          name: "Jordan F.",
+          name: "Jordan",
           roles: ["Manager", "Document Control", "Basic User"],  
           total: 19,
           completed: 19,
@@ -705,7 +705,7 @@
           incompleteList: []
         },
         {
-          name: "J.T. L.",
+          name: "J.T.",
           roles: ["MREP", "Internal Auditor", "Document Control", "Basic User"],
           total: 28,
           completed: 28,
@@ -715,7 +715,7 @@
           incompleteList: []
         },
         {
-          name: "Chris P.",
+          name: "Chris",
           roles: ["MREP", "Internal Auditor", "Process Owner", "Executive", "Document Control", "Basic User"],
           total: 33,
           completed: 33,
@@ -725,7 +725,7 @@
           incompleteList: []
         },
         {
-          name: "Paul R.",
+          name: "Paul",
           roles: ["Process Owner", "Executive", "Document Control", "Basic User"],
           total: 27,
           completed: 8,
@@ -740,7 +740,7 @@
           ]
         },
         {
-          name: "Ely W.",
+          name: "Ely",
           roles: ["Process Owner", "Executive", "Document Control", "Basic User"],
           total: 27,
           completed: 27,
@@ -750,7 +750,7 @@
           incompleteList: []
         },
         {
-          name: "Bill W.",
+          name: "Bill",
           roles: ["Process Owner", "Executive", "Document Control", "Basic User"],
           total: 27,
           completed: 27,
@@ -763,59 +763,59 @@
       courses: [
         {
           course: "00.260 Purchasing",
-          relevantUsers: ["Paul R."],
+          relevantUsers: ["Paul"],
           completionRate: 83.3,
           completedUsers: 5,
           totalUsers: 6,
           userStatus: {
-            "Paul R.": { status: "Not Started", lastAccessed: null }
+            "Paul": { status: "Not Started", lastAccessed: null }
           }
         },
         {
           course: "10.220 Providing Products and Services",
-          relevantUsers: ["Paul R."],
+          relevantUsers: ["Paul"],
           completionRate: 83.3,
           completedUsers: 5,
           totalUsers: 6,
           userStatus: {
-            "Paul R.": { status: "Not Started", lastAccessed: null }
+            "Paul": { status: "Not Started", lastAccessed: null }
           }
         },
         {
           course: "100.25 CORE: Working with Document Reports",
-          relevantUsers: ["Paul R."],
+          relevantUsers: ["Paul"],
           completionRate: 87.5,
           completedUsers: 7,
           totalUsers: 8,
           userStatus: {
-            "Paul R.": { status: "Not Started", lastAccessed: null }
+            "Paul": { status: "Not Started", lastAccessed: null }
           }
         },
         {
           course: "10.020 ISO 9001 Introduction",
-          relevantUsers: ["Josh S.", "Paul R."],
+          relevantUsers: ["Josh", "Paul"],
           completionRate: 75.0,
           completedUsers: 6,
           totalUsers: 8,
           userStatus: {
-            "Josh S.": { status: "Not Started", lastAccessed: null },
-            "Paul R.": { status: "Not Started", lastAccessed: null }
+            "Josh": { status: "Not Started", lastAccessed: null },
+            "Paul": { status: "Not Started", lastAccessed: null }
           }
         },
         {
           course: "90.060 Business Impact: Improvement and Maintenance",
-          relevantUsers: ["Paul R."],
+          relevantUsers: ["Paul"],
           completionRate: 80.0,
           completedUsers: 4,
           totalUsers: 5,
           userStatus: {
-            "Paul R.": { status: "Not Started", lastAccessed: null }   
+            "Paul": { status: "Not Started", lastAccessed: null }   
           }
         }
       ],
       actions: [
-        "Josh S. has completed 16 of 19 courses - significant progress!",
-        "Paul R. has completed 8 of 27 courses - 19 remaining"
+        "Josh has completed 16 of 19 courses - significant progress!",
+        "Paul has completed 8 of 27 courses - 19 remaining"
       ],
       overallStats: {
         totalCourses: 207,

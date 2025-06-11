@@ -412,7 +412,7 @@
   <div class="container">
     <header class="mb-6">
       <h1>CORE Learning Center Dashboard</h1>
-      <p>Updated on June 9, 2025</p>
+      <p>Updated on June 11, 2025</p>
     </header>
     
     <div class="card mb-6">
@@ -423,7 +423,7 @@
         <div class="grid grid-cols-3 mb-6">
           <div class="stats-box">
             <div class="stats-title">Completion Rate</div>
-            <div class="stats-value" id="overall-completion-rate">89.4%</div>
+            <div class="stats-value" id="overall-completion-rate">90.8%</div>
             <div class="stats-subtitle">of required courses completed</div>
           </div>
           <div class="stats-box">
@@ -433,7 +433,7 @@
           </div>
           <div class="stats-box">
             <div class="stats-title">Not Started</div>
-            <div class="stats-value" id="overall-not-started">21</div>
+            <div class="stats-value" id="overall-not-started">18</div>
             <div class="stats-subtitle">courses yet to begin</div>
           </div>
         </div>
@@ -520,10 +520,10 @@
               </tr>
               <tr>
                 <td>Josh</td>
-                <td><span class="font-semibold">17</span></td>
+                <td><span class="font-semibold">20</span></td>
                 <td>
                   <div class="progress-container">
-                    <div class="progress-bar progress-warning" style="width: 89%;"></div>
+                    <div class="progress-bar progress-good" style="width: 100%;"></div>
                   </div>
                 </td>
               </tr>
@@ -671,20 +671,6 @@
     const dashboardData = {
       users: [
         {
-          name: "Josh",
-          roles: ["Manager", "Document Control", "Basic User"],
-          total: 19,
-          completed: 16,
-          inProgress: 0,
-          notStarted: 3,
-          completionRate: 84.2,
-          incompleteList: [
-            { course: "00.180 Competency Training and Awareness", status: "Not Started", lastAccessed: null },
-            { course: "00.200 Corrective Action", status: "Not Started", lastAccessed: null },
-            { course: "10.020 ISO 9001 Introduction", status: "Not Started", lastAccessed: null }
-          ]
-        },
-        {
           name: "Cary",
           roles: ["Executive", "Process Owner", "Document Control", "Basic User"],
           total: 27,
@@ -740,6 +726,16 @@
           ]
         },
         {
+          name: "Josh",
+          roles: ["Manager", "Document Control", "Basic User"],
+          total: 19,
+          completed: 19,
+          inProgress: 0,
+          notStarted: 0,
+          completionRate: 100,
+          incompleteList: []
+        },
+        {
           name: "Ely",
           roles: ["Process Owner", "Executive", "Document Control", "Basic User"],
           total: 27,
@@ -793,12 +789,11 @@
         },
         {
           course: "10.020 ISO 9001 Introduction",
-          relevantUsers: ["Paul", "Josh"], // Only list users who need to complete it
-          completionRate: 75.0,
-          completedUsers: 6,
+          relevantUsers: ["Paul"], // Only list users who need to complete it
+          completionRate: 87.5,
+          completedUsers: 7,
           totalUsers: 8,
           userStatus: {
-            "Josh": { status: "Not Started", lastAccessed: null },
             "Paul": { status: "Not Started", lastAccessed: null }
           }
         },
@@ -814,18 +809,18 @@
         }
       ],
       actions: [
-        "Immediate attention: Paul Rankin requires 19 additional courses to meet Executive/Process Owner requirements",
-        "Josh Shackelford is 84% complete - 3 courses away from full compliance",
-        "Compliance status: 6 of 8 personnel are fully compliant with role-based training requirements",
+        "Immediate attention: Paul requires 19 additional courses to meet Executive/Process Owner requirements",
+        "Josh is now 100% complete - full compliance",
+        "Compliance status: 7 of 8 personnel are fully compliant with role-based training requirements",
         "Auditor readiness: Both J.T. and Chris have completed all required internal auditing courses",
         "Next 30 days: Focus on completing foundational CORE courses for remaining users"
       ],
-      overallStats: {
+      overallStats: { // Update overall statistics here
         totalCourses: 207,
-        totalCompleted: 185,
+        totalCompleted: 188,
         totalInProgress: 1,
-        totalNotStarted: 21,
-        completionRate: 89.4
+        totalNotStarted: 18,
+        completionRate: 90.8
       }
     };
     

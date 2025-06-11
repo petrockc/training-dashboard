@@ -423,17 +423,17 @@
         <div class="grid grid-cols-3 mb-6">
           <div class="stats-box">
             <div class="stats-title">Completion Rate</div>
-            <div class="stats-value" id="overall-completion-rate">90.8%</div>
+            <div class="stats-value" id="overall-completion-rate">93.7%</div>
             <div class="stats-subtitle">of required courses completed</div>
           </div>
           <div class="stats-box">
             <div class="stats-title">In Progress</div>
-            <div class="stats-value" id="overall-in-progress">1</div>
+            <div class="stats-value" id="overall-in-progress">0</div>
             <div class="stats-subtitle">courses currently being taken</div>
           </div>
           <div class="stats-box">
             <div class="stats-title">Not Started</div>
-            <div class="stats-value" id="overall-not-started">18</div>
+            <div class="stats-value" id="overall-not-started">13</div>
             <div class="stats-subtitle">courses yet to begin</div>
           </div>
         </div>
@@ -529,10 +529,10 @@
               </tr>
               <tr>
                 <td>Paul</td>
-                <td><span class="font-semibold">8</span></td>
+                <td><span class="font-semibold">14</span></td>
                 <td>
                   <div class="progress-container">
-                    <div class="progress-bar progress-danger" style="width: 30%;"></div>
+                    <div class="progress-bar progress-danger" style="width: 52%;"></div>
                   </div>
                 </td>
               </tr>              
@@ -714,15 +714,16 @@
           name: "Paul",
           roles: ["Process Owner", "Executive", "Document Control", "Basic User"],
           total: 27,
-          completed: 8,
+          completed: 14,
           inProgress: 0,
-          notStarted: 19,
-          completionRate: 29.6,
+          notStarted: 13,
+          completionRate: 51.9,
           incompleteList: [
             { course: "100.00 CORE: Just the Basics", status: "Not Started", lastAccessed: null },
             { course: "10.020 ISO 9001 Introduction", status: "Not Started", lastAccessed: null },
-            { course: "00.040 Risk-Based Thinking", status: "Not Started", lastAccessed: null },
-            { course: "00.100 Measurement Planning", status: "Not Started", lastAccessed: null }
+            { course: "00.180 Competency Training and Awareness", status: "Not Started", lastAccessed: null },
+            { course: "00.200 Corrective Action", status: "Not Started", lastAccessed: null },
+            { course: "10.160 Understanding Customer and Product Requirements", status: "Not Started", lastAccessed: null }
           ]
         },
         {
@@ -778,11 +779,11 @@
           }
         },
         {
-          course: "100.25 CORE: Working with Document Reports",
+          course: "10.160 Understanding Customer and Product Requirements",
           relevantUsers: ["Paul"], // Only list users who need to complete it
-          completionRate: 87.5,
-          completedUsers: 7,
-          totalUsers: 8,
+          completionRate: 83.3,
+          completedUsers: 5,
+          totalUsers: 6,
           userStatus: {
             "Paul": { status: "Not Started", lastAccessed: null }
           }
@@ -798,7 +799,7 @@
           }
         },
         {
-          course: "90.060 Business Impact: Improvement and Maintenance",
+          course: "90.020 Business Impact: Managing Business Risk",
           relevantUsers: ["Paul"], // Only list users who need to complete it
           completionRate: 80.0,
           completedUsers: 4,
@@ -809,18 +810,18 @@
         }
       ],
       actions: [
-        "Immediate attention: Paul requires 19 additional courses to meet Executive/Process Owner requirements",
-        "Josh is now 100% complete - full compliance",
+        "Immediate attention: Paul requires 13 additional courses to meet Executive/Process Owner requirements (6 courses recently completed)",
+        "Josh has achieved 100% completion - all role requirements fulfilled",
         "Compliance status: 7 of 8 personnel are fully compliant with role-based training requirements",
         "Auditor readiness: Both J.T. and Chris have completed all required internal auditing courses",
-        "Next 30 days: Focus on completing foundational CORE courses for remaining users"
+        "Next 30 days: Focus on completing remaining Executive/Process Owner requirements for Paul"
       ],
       overallStats: { // Update overall statistics here
         totalCourses: 207,
-        totalCompleted: 188,
-        totalInProgress: 1,
-        totalNotStarted: 18,
-        completionRate: 90.8
+        totalCompleted: 194,
+        totalInProgress: 0,
+        totalNotStarted: 13,
+        completionRate: 93.7
       }
     };
     

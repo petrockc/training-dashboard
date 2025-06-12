@@ -423,7 +423,7 @@
         <div class="grid grid-cols-3 mb-6">
           <div class="stats-box">
             <div class="stats-title">Completion Rate</div>
-            <div class="stats-value" id="overall-completion-rate">93.7%</div>
+            <div class="stats-value" id="overall-completion-rate">96.6%</div>
             <div class="stats-subtitle">of required courses completed</div>
           </div>
           <div class="stats-box">
@@ -433,7 +433,7 @@
           </div>
           <div class="stats-box">
             <div class="stats-title">Not Started</div>
-            <div class="stats-value" id="overall-not-started">13</div>
+            <div class="stats-value" id="overall-not-started">7</div>
             <div class="stats-subtitle">courses yet to begin</div>
           </div>
         </div>
@@ -519,6 +519,15 @@
                 </td>
               </tr>
               <tr>
+                <td>Paul</td>
+                <td><span class="font-semibold">24</span></td>
+                <td>
+                  <div class="progress-container">
+                    <div class="progress-bar progress-warning" style="width: 74%;"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
                 <td>Josh</td>
                 <td><span class="font-semibold">20</span></td>
                 <td>
@@ -526,16 +535,7 @@
                     <div class="progress-bar progress-good" style="width: 100%;"></div>
                   </div>
                 </td>
-              </tr>
-              <tr>
-                <td>Paul</td>
-                <td><span class="font-semibold">14</span></td>
-                <td>
-                  <div class="progress-container">
-                    <div class="progress-bar progress-danger" style="width: 52%;"></div>
-                  </div>
-                </td>
-              </tr>              
+              </tr>         
             </tbody>
           </table>
         </div>
@@ -714,16 +714,16 @@
           name: "Paul",
           roles: ["Process Owner", "Executive", "Document Control", "Basic User"],
           total: 27,
-          completed: 14,
+          completed: 20,
           inProgress: 0,
-          notStarted: 13,
-          completionRate: 51.9,
+          notStarted: 7,
+          completionRate: 74.1,
           incompleteList: [
-            { course: "100.00 CORE: Just the Basics", status: "Not Started", lastAccessed: null },
-            { course: "10.020 ISO 9001 Introduction", status: "Not Started", lastAccessed: null },
-            { course: "00.180 Competency Training and Awareness", status: "Not Started", lastAccessed: null },
-            { course: "00.200 Corrective Action", status: "Not Started", lastAccessed: null },
-            { course: "10.160 Understanding Customer and Product Requirements", status: "Not Started", lastAccessed: null }
+            { course: "90.020 Business Impact: Managing Business Risk", status: "Not Started", lastAccessed: null },
+            { course: "90.030 Business Impact: Management System Planning & Leadership", status: "Not Started", lastAccessed: null },
+            { course: "90.040 Business Impact: A Culture of Involvement", status: "Not Started", lastAccessed: null },
+            { course: "10.160 Understanding Customer and Product Requirements", status: "Not Started", lastAccessed: null },
+            { course: "10.220 Providing Products and Services", status: "Not Started", lastAccessed: null }
           ]
         },
         {
@@ -758,16 +758,6 @@
         }
       ],
       courses: [
-        {
-          course: "00.260 Purchasing",
-          relevantUsers: ["Paul"], // Only list users who need to complete it
-          completionRate: 83.3,
-          completedUsers: 5,
-          totalUsers: 6,
-          userStatus: {
-            "Paul": { status: "Not Started", lastAccessed: null }
-          }
-        },
         {
           course: "10.220 Providing Products and Services",
           relevantUsers: ["Paul"], // Only list users who need to complete it
@@ -806,11 +796,20 @@
           totalUsers: 5,
           userStatus: {
             "Paul": { status: "Not Started", lastAccessed: null }   
+          },
+       {
+          course: "90.030 Business Impact: Management System Planning & Leadership",
+          relevantUsers: ["Paul"], // Only list users who need to complete it
+          completionRate: 80.0,
+          completedUsers: 4,
+          totalUsers: 5,
+          userStatus: {
+            "Paul": { status: "Not Started", lastAccessed: null }   
           }
         }
       ],
       actions: [
-        "Immediate attention: Paul requires 13 additional courses to meet Executive/Process Owner requirements (6 courses recently completed)",
+        "Immediate attention: Paul requires 7 additional courses to meet Executive/Process Owner requirements (14 courses recently completed)",
         "Josh has achieved 100% completion - all role requirements fulfilled",
         "Compliance status: 7 of 8 personnel are fully compliant with role-based training requirements",
         "Auditor readiness: Both J.T. and Chris have completed all required internal auditing courses",
@@ -818,10 +817,10 @@
       ],
       overallStats: { // Update overall statistics here
         totalCourses: 207,
-        totalCompleted: 194,
+        totalCompleted: 200,
         totalInProgress: 0,
-        totalNotStarted: 13,
-        completionRate: 93.7
+        totalNotStarted: 7,
+        completionRate: 96.6
       }
     };
     

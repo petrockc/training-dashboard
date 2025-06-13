@@ -460,87 +460,16 @@
               <tr>
                 <th>Name</th>
                 <th>Total Course Completions</th>
-                <th>Progress Bar</th>
+                <th>Required Course Completion</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Chris</td>
-                <td><span class="font-semibold">36</span></td>
-                <td>
-                  <div class="progress-container">
-                    <div class="progress-bar progress-good" style="width: 100%;"></div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>Cary</td>
-                <td><span class="font-semibold">35</span></td>
-                <td>
-                  <div class="progress-container">
-                    <div class="progress-bar progress-good" style="width: 100%;"></div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>Ely</td>
-                <td><span class="font-semibold">29</span></td>
-                <td>
-                  <div class="progress-container">
-                    <div class="progress-bar progress-good" style="width: 100%;"></div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>J.T.</td>
-                <td><span class="font-semibold">29</span></td>
-                <td>
-                  <div class="progress-container">
-                    <div class="progress-bar progress-good" style="width: 100%;"></div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>Bill</td>
-                <td><span class="font-semibold">29</span></td>
-                <td>
-                  <div class="progress-container">
-                    <div class="progress-bar progress-good" style="width: 100%;"></div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>Jordan</td>
-                <td><span class="font-semibold">29</span></td>
-                <td>
-                  <div class="progress-container">
-                    <div class="progress-bar progress-good" style="width: 100%;"></div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>Paul</td>
-                <td><span class="font-semibold">24</span></td>
-                <td>
-                  <div class="progress-container">
-                    <div class="progress-bar progress-warning" style="width: 74%;"></div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>Josh</td>
-                <td><span class="font-semibold">20</span></td>
-                <td>
-                  <div class="progress-container">
-                    <div class="progress-bar progress-good" style="width: 100%;"></div>
-                  </div>
-                </td>
-              </tr>         
+              <!-- Populated by populateLeaderboardTable() function -->
             </tbody>
           </table>
         </div>
         <div class="text-sm text-gray mt-4">
-          <p><strong>Note:</strong> This shows the total number of unique courses completed by each user, regardless of whether they are required for their specific role(s).</p>
+          <p><strong>Note:</strong> Progress bars show completion percentage of role-specific required courses. Total completions may exceed requirements.</p>
         </div>
       </div>
     </div>
@@ -824,6 +753,17 @@
         completionRate: 96.6
       }
     };
+
+    const leaderboardData = [
+      { name: "Cary", completions: 35, required: 27, completionRate: 100 },
+      { name: "Chris", completions: 36, required: 33, completionRate: 100 },
+      { name: "Ely", completions: 29, required: 27, completionRate: 100 },
+      { name: "Bill", completions: 29, required: 27, completionRate: 100 },
+      { name: "J.T.", completions: 29, required: 28, completionRate: 100 },
+      { name: "Jordan", completions: 29, required: 19, completionRate: 100 },
+      { name: "Paul", completions: 24, required: 27, completionRate: 74 },
+      { name: "Josh", completions: 20, required: 19, completionRate: 100 }
+    ];   
     
     // Function to initialize the dashboard
     function initDashboard() {
@@ -837,6 +777,7 @@
       createUserCompletionChart();
       
       // Populate tables
+      populateLeaderboardTable();
       populatePersonnelTable();
       populateCoursesTable();
       populateActionsContainer();
@@ -878,7 +819,43 @@
         }
       });
     }
+
+    function populateLeaderboardTable() {
+      const tableBody = document.querySelector('#completions-table tbody');
+      tableBody.innerHTML = '';
+  
+      // Sort by completions (descending), then by name (ascending)
+      const sortedData = leaderboardData.sort((a, b) => {
+        if (b.completions !== a.completions) {
+          return b.completions - a.completions; // Higher completions first
+        }
+        return a.name.localeCompare(b.name); // Alphabetical for ties
+      });
+  
+      sortedData.forEach(user => {
+        const row = document.createElement('tr');
     
+        // Determine progress bar color based on completion rate
+        let progressClass = 'progress-good';
+        if (user.completionRate < 100) {
+          progressClass = user.completionRate >= 90 ? 'progress-warning' : 'progress-danger';
+        }
+    
+        row.innerHTML = `
+          <td>${user.name}</td>
+          <td><span class="font-semibold">${user.completions}</span></td>
+          <td>
+            <div class="progress-container">
+              <div class="progress-bar ${progressClass}" style="width: ${user.completionRate}%;"></div>
+            </div>
+            <div class="text-xs text-gray mt-1">${user.completionRate}% of required</div>
+          </td>
+        `;
+    
+        tableBody.appendChild(row);
+      });
+    }
+
     // Function to create the user completion chart
     function createUserCompletionChart() {
       const ctx = document.getElementById('user-completion-chart').getContext('2d');

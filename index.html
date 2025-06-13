@@ -412,7 +412,7 @@
   <div class="container">
     <header class="mb-6">
       <h1>CORE Learning Center Dashboard</h1>
-      <p>Updated on June 12, 2025</p>
+      <p>Updated on June 13, 2025</p>
     </header>
 
     <div class="card mb-6">
@@ -460,7 +460,7 @@
               <tr>
                 <th>Name</th>
                 <th>Total Course Completions</th>
-                <th>Required Course Completion</th>
+                <th>Required Course Completion Progress</th>
               </tr>
             </thead>
             <tbody>
@@ -756,12 +756,12 @@
 
     const leaderboardData = [
       { name: "Cary", completions: 35, required: 27, completionRate: 100 },
+      { name: "Paul", completions: 24, required: 27, completionRate: 74 },
       { name: "Chris", completions: 36, required: 33, completionRate: 100 },
-      { name: "Ely", completions: 29, required: 27, completionRate: 100 },
       { name: "Bill", completions: 29, required: 27, completionRate: 100 },
+      { name: "Ely", completions: 29, required: 27, completionRate: 100 },
       { name: "J.T.", completions: 29, required: 28, completionRate: 100 },
       { name: "Jordan", completions: 29, required: 19, completionRate: 100 },
-      { name: "Paul", completions: 24, required: 27, completionRate: 74 },
       { name: "Josh", completions: 20, required: 19, completionRate: 100 }
     ];   
     
@@ -904,7 +904,19 @@
       const tableBody = document.getElementById('personnel-body');
       tableBody.innerHTML = '';
       
-      dashboardData.users.sort((a, b) => a.completionRate - b.completionRate).forEach(user => {
+      dashboardData.users.sort((a, b) => {
+        // First, sort by completion status (incomplete users first)
+        if (a.completionRate < 100 && b.completionRate === 100) return -1;
+        if (a.completionRate === 100 && b.completionRate < 100) return 1;
+  
+        // If both incomplete, sort by completion rate (lowest first)
+        if (a.completionRate < 100 && b.completionRate < 100) {
+          return a.completionRate - b.completionRate;
+        }
+  
+        // If both complete, sort alphabetically
+        return a.name.localeCompare(b.name);
+      }).forEach(user => {
         const row = document.createElement('tr');
         
         // Name cell

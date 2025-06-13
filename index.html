@@ -859,7 +859,19 @@
     // Function to create the user completion chart
     function createUserCompletionChart() {
       const ctx = document.getElementById('user-completion-chart').getContext('2d');
-      const sortedUsers = [...dashboardData.users].sort((a, b) => a.completionRate - b.completionRate);
+      const sortedUsers = [...dashboardData.users].sort((a, b) => {
+        // First, sort by completion status (incomplete users first)
+        if (a.completionRate < 100 && b.completionRate === 100) return -1;
+        if (a.completionRate === 100 && b.completionRate < 100) return 1;
+  
+        // If both incomplete, sort by completion rate (lowest first)
+        if (a.completionRate < 100 && b.completionRate < 100) {
+          return a.completionRate - b.completionRate;
+        }
+  
+  // If both complete, sort alphabetically
+  return a.name.localeCompare(b.name);
+});
       
       const chart = new Chart(ctx, {
         type: 'bar',

@@ -596,147 +596,161 @@
   </div>
   
   <script>
-    // Updated data based on CSV analysis
-    const dashboardData = {
-      users: [
-        {
-          name: "Cary",
-          roles: ["Executive", "Process Owner", "Document Control", "Basic User"],
-          total: 27,
-          completed: 27,
-          inProgress: 0,
-          notStarted: 0,
-          completionRate: 100,
-          incompleteList: []
-        },
-        {
-          name: "Jordan",
-          roles: ["Manager", "Document Control", "Basic User"],  
-          total: 19,
-          completed: 19,
-          inProgress: 0,
-          notStarted: 0,
-          completionRate: 100,
-          incompleteList: []
-        },
-        {
-          name: "J.T.",
-          roles: ["MREP", "Internal Auditor", "Document Control", "Basic User"],
-          total: 28,
-          completed: 28,
-          inProgress: 0,
-          notStarted: 0,
-          completionRate: 100,
-          incompleteList: []
-        },
-        {
-          name: "Chris",
-          roles: ["MREP", "Internal Auditor", "Process Owner", "Executive", "Document Control", "Basic User"],
-          total: 33,
-          completed: 33,
-          inProgress: 0,
-          notStarted: 0,
-          completionRate: 100,
-          incompleteList: []
-        },
-        {
-          name: "Paul",
-          roles: ["Process Owner", "Executive", "Document Control", "Basic User"],
-          total: 27,
-          completed: 20,
-          inProgress: 0,
-          notStarted: 7,
-          completionRate: 74.1,
-          incompleteList: [
-            { course: "90.020 Business Impact: Managing Business Risk", status: "Not Started", lastAccessed: null },
-            { course: "90.030 Business Impact: Management System Planning & Leadership", status: "Not Started", lastAccessed: null },
-            { course: "90.040 Business Impact: A Culture of Involvement", status: "Not Started", lastAccessed: null },
-            { course: "10.160 Understanding Customer and Product Requirements", status: "Not Started", lastAccessed: null },
-            { course: "10.220 Providing Products and Services", status: "Not Started", lastAccessed: null }
-          ]
-        },
-        {
-          name: "Josh",
-          roles: ["Manager", "Document Control", "Basic User"],
-          total: 19,
-          completed: 19,
-          inProgress: 0,
-          notStarted: 0,
-          completionRate: 100,
-          incompleteList: []
-        },
-        {
-          name: "Ely",
-          roles: ["Process Owner", "Executive", "Document Control", "Basic User"],
-          total: 27,
-          completed: 27,
-          inProgress: 0,
-          notStarted: 0,
-          completionRate: 100,
-          incompleteList: []
-        },
-        {
-          name: "Bill",
-          roles: ["Process Owner", "Executive", "Document Control", "Basic User"],
-          total: 27,
-          completed: 27,
-          inProgress: 0,
-          notStarted: 0,
-          completionRate: 100,
-          incompleteList: []
+  // Single source of truth for all user data
+  const userData = [
+    {
+      name: "Cary",
+      roles: ["Executive", "Process Owner", "Document Control", "Basic User"],
+      requiredCourses: 27,
+      completedRequired: 27,
+      totalCompletions: 35,
+      inProgress: 0,
+      completionRate: 100,
+      incompleteList: []
+    },
+    {
+      name: "Chris", 
+      roles: ["MREP", "Internal Auditor", "Process Owner", "Executive", "Document Control", "Basic User"],
+      requiredCourses: 33,
+      completedRequired: 33,
+      totalCompletions: 36,
+      inProgress: 0,
+      completionRate: 100,
+      incompleteList: []
+    },
+    {
+      name: "Ely",
+      roles: ["Process Owner", "Executive", "Document Control", "Basic User"],
+      requiredCourses: 27,
+      completedRequired: 27,
+      totalCompletions: 29,
+      inProgress: 0,
+      completionRate: 100,
+      incompleteList: []
+    },
+    {
+      name: "Bill",
+      roles: ["Process Owner", "Executive", "Document Control", "Basic User"],
+      requiredCourses: 27,
+      completedRequired: 27,
+      totalCompletions: 29,
+      inProgress: 0,
+      completionRate: 100,
+      incompleteList: []
+    },
+    {
+      name: "J.T.",
+      roles: ["MREP", "Internal Auditor", "Document Control", "Basic User"],
+      requiredCourses: 28,
+      completedRequired: 28,
+      totalCompletions: 29,
+      inProgress: 0,
+      completionRate: 100,
+      incompleteList: []
+    },
+    {
+      name: "Jordan",
+      roles: ["Manager", "Document Control", "Basic User"],
+      requiredCourses: 19,
+      completedRequired: 19,
+      totalCompletions: 29,
+      inProgress: 0,
+      completionRate: 100,
+      incompleteList: []
+    },
+    {
+      name: "Paul",
+      roles: ["Process Owner", "Executive", "Document Control", "Basic User"],
+      requiredCourses: 27,
+      completedRequired: 20,
+      totalCompletions: 24,
+      inProgress: 0,
+      completionRate: 74.1,
+      incompleteList: [
+        { course: "90.020 Business Impact: Managing Business Risk", status: "Not Started", lastAccessed: null },
+        { course: "90.030 Business Impact: Management System Planning & Leadership", status: "Not Started", lastAccessed: null },
+        { course: "90.040 Business Impact: A Culture of Involvement", status: "Not Started", lastAccessed: null },
+        { course: "10.020 ISO 9001 Introduction", status: "Not Started", lastAccessed: null },
+        { course: "10.100 Document and Record Control_9001 Addendum", status: "Not Started", lastAccessed: null },
+        { course: "10.160 Understanding Customer and Product Requirements", status: "Not Started", lastAccessed: null },
+        { course: "10.220 Providing Products and Services", status: "Not Started", lastAccessed: null }
+      ]
+    },
+    {
+      name: "Josh",
+      roles: ["Manager", "Document Control", "Basic User"],
+      requiredCourses: 19,
+      completedRequired: 19,
+      totalCompletions: 20,
+      inProgress: 0,
+      completionRate: 100,
+      incompleteList: []
+    }
+  ];
+
+  // Generate dashboardData from userData
+  const dashboardData = {
+    users: userData.map(user => ({
+      name: user.name,
+      roles: user.roles,
+      total: user.requiredCourses,
+      completed: user.completedRequired,
+      inProgress: user.inProgress,
+      notStarted: user.requiredCourses - user.completedRequired - user.inProgress,
+      completionRate: user.completionRate,
+      incompleteList: user.incompleteList
+    })),      
+    courses: [
+      {
+        course: "10.020 ISO 9001 Introduction",
+        relevantUsers: ["Paul"], // Only list users who need to complete it
+        completionRate: 87.5,
+        completedUsers: 7,
+        totalUsers: 8,
+        userStatus: {
+          "Paul": { status: "Not Started", lastAccessed: null }
         }
-      ],
-      courses: [
-        {
-          course: "10.220 Providing Products and Services",
-          relevantUsers: ["Paul"], // Only list users who need to complete it
-          completionRate: 83.3,
-          completedUsers: 5,
-          totalUsers: 6,
-          userStatus: {
-            "Paul": { status: "Not Started", lastAccessed: null }
-          }
-        },
-        {
-          course: "10.160 Understanding Customer and Product Requirements",
-          relevantUsers: ["Paul"], // Only list users who need to complete it
-          completionRate: 83.3,
-          completedUsers: 5,
-          totalUsers: 6,
-          userStatus: {
-            "Paul": { status: "Not Started", lastAccessed: null }
-          }
-        },
-        {
-          course: "10.020 ISO 9001 Introduction",
-          relevantUsers: ["Paul"], // Only list users who need to complete it
-          completionRate: 87.5,
-          completedUsers: 7,
-          totalUsers: 8,
-          userStatus: {
-            "Paul": { status: "Not Started", lastAccessed: null }
-          }
-        },
-        {
-          course: "90.020 Business Impact: Managing Business Risk",
-          relevantUsers: ["Paul"], // Only list users who need to complete it
-          completionRate: 80.0,
-          completedUsers: 4,
-          totalUsers: 5,
-          userStatus: {
-            "Paul": { status: "Not Started", lastAccessed: null }   
-          }
-        },
-       {
-          course: "90.030 Business Impact: Management System Planning & Leadership",
-          relevantUsers: ["Paul"], // Only list users who need to complete it
-          completionRate: 80.0,
-          completedUsers: 4,
-          totalUsers: 5,
-          userStatus: {
-            "Paul": { status: "Not Started", lastAccessed: null }   
-          }
+      },
+      {
+        course: "10.160 Understanding Customer and Product Requirements",
+        relevantUsers: ["Paul"], // Only list users who need to complete it
+        completionRate: 83.3,
+        completedUsers: 5,
+        totalUsers: 6,
+        userStatus: {
+          "Paul": { status: "Not Started", lastAccessed: null }
         }
+      },      
+      {
+        course: "10.220 Providing Products and Services",
+        relevantUsers: ["Paul"], // Only list users who need to complete it
+        completionRate: 83.3,
+        completedUsers: 5,
+        totalUsers: 6,
+        userStatus: {
+          "Paul": { status: "Not Started", lastAccessed: null }
+        }
+      },
+      {
+        course: "90.020 Business Impact: Managing Business Risk",
+        relevantUsers: ["Paul"], // Only list users who need to complete it
+        completionRate: 80.0,
+        completedUsers: 4,
+        totalUsers: 5,
+        userStatus: {
+          "Paul": { status: "Not Started", lastAccessed: null }   
+        }
+      },
+      {
+        course: "90.030 Business Impact: Management System Planning & Leadership",
+        relevantUsers: ["Paul"], // Only list users who need to complete it
+        completionRate: 80.0,
+        completedUsers: 4,
+        totalUsers: 5,
+        userStatus: {
+          "Paul": { status: "Not Started", lastAccessed: null }   
+        }
+      }
       ],
       actions: [
         "Immediate attention: Paul requires 7 additional courses to meet Executive/Process Owner requirements (14 courses recently completed)",
@@ -754,16 +768,13 @@
       }
     };
 
-    const leaderboardData = [
-      { name: "Cary", completions: 35, required: 27, completionRate: 100 },
-      { name: "Paul", completions: 24, required: 27, completionRate: 74 },
-      { name: "Chris", completions: 36, required: 33, completionRate: 100 },
-      { name: "Bill", completions: 29, required: 27, completionRate: 100 },
-      { name: "Ely", completions: 29, required: 27, completionRate: 100 },
-      { name: "J.T.", completions: 29, required: 28, completionRate: 100 },
-      { name: "Jordan", completions: 29, required: 19, completionRate: 100 },
-      { name: "Josh", completions: 20, required: 19, completionRate: 100 }
-    ];   
+    // Generate leaderboardData from userData
+    const leaderboardData = userData.map(user => ({
+      name: user.name,
+      completions: user.totalCompletions,
+      required: user.requiredCourses,
+      completionRate: user.completionRate
+    }));   
     
     // Function to initialize the dashboard
     function initDashboard() {

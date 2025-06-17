@@ -254,6 +254,14 @@
       margin-bottom: 1rem;
       border-radius: 0.25rem;
     }
+
+    .action-item-success {
+      background-color: var(--success-light);
+      border-left: 4px solid var(--success-color);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 0.25rem;
+    }
     
     .tab-container {
       margin-bottom: 2rem;
@@ -412,7 +420,7 @@
   <div class="container">
     <header class="mb-6">
       <h1>CORE Learning Center Dashboard</h1>
-      <p>Updated on June 13, 2025</p>
+      <p>Updated on June 17, 2025</p>
     </header>
 
     <div class="card mb-6">
@@ -662,19 +670,14 @@
       name: "Paul",
       roles: ["Process Owner", "Executive", "Document Control", "Basic User"],
       requiredCourses: 27,
-      completedRequired: 20,
-      totalCompletions: 24,
+      completedRequired: 27,
+      totalCompletions: 31,
       inProgress: 0,
-      completionRate: 74.1,
-      incompleteList: [
-        { course: "90.020 Business Impact: Managing Business Risk", status: "Not Started", lastAccessed: null },
-        { course: "90.030 Business Impact: Management System Planning & Leadership", status: "Not Started", lastAccessed: null },
-        { course: "90.040 Business Impact: A Culture of Involvement", status: "Not Started", lastAccessed: null },
-        { course: "10.020 ISO 9001 Introduction", status: "Not Started", lastAccessed: null },
-        { course: "10.100 Document and Record Control_9001 Addendum", status: "Not Started", lastAccessed: null },
-        { course: "10.160 Understanding Customer and Product Requirements", status: "Not Started", lastAccessed: null },
-        { course: "10.220 Providing Products and Services", status: "Not Started", lastAccessed: null }
-      ]
+      completionRate: 100,
+      incompleteList: []
+        // { course: "90.020 Business Impact: Managing Business Risk", status: "Not Started", lastAccessed: null },
+        // { course: "90.030 Business Impact: Management System Planning & Leadership", status: "Not Started", lastAccessed: null },
+        // { course: "90.040 Business Impact: A Culture of Involvement", status: "Not Started", lastAccessed: null }
     },
     {
       name: "Josh",
@@ -701,70 +704,29 @@
       incompleteList: user.incompleteList
     })),      
     courses: [
-      {
-        course: "10.020 ISO 9001 Introduction",
-        relevantUsers: ["Paul"], // Only list users who need to complete it
-        completionRate: 87.5,
-        completedUsers: 7,
-        totalUsers: 8,
-        userStatus: {
-          "Paul": { status: "Not Started", lastAccessed: null }
-        }
-      },
-      {
-        course: "10.160 Understanding Customer and Product Requirements",
-        relevantUsers: ["Paul"], // Only list users who need to complete it
-        completionRate: 83.3,
-        completedUsers: 5,
-        totalUsers: 6,
-        userStatus: {
-          "Paul": { status: "Not Started", lastAccessed: null }
-        }
-      },      
-      {
-        course: "10.220 Providing Products and Services",
-        relevantUsers: ["Paul"], // Only list users who need to complete it
-        completionRate: 83.3,
-        completedUsers: 5,
-        totalUsers: 6,
-        userStatus: {
-          "Paul": { status: "Not Started", lastAccessed: null }
-        }
-      },
-      {
-        course: "90.020 Business Impact: Managing Business Risk",
-        relevantUsers: ["Paul"], // Only list users who need to complete it
-        completionRate: 80.0,
-        completedUsers: 4,
-        totalUsers: 5,
-        userStatus: {
-          "Paul": { status: "Not Started", lastAccessed: null }   
-        }
-      },
-      {
-        course: "90.030 Business Impact: Management System Planning & Leadership",
-        relevantUsers: ["Paul"], // Only list users who need to complete it
-        completionRate: 80.0,
-        completedUsers: 4,
-        totalUsers: 5,
-        userStatus: {
-          "Paul": { status: "Not Started", lastAccessed: null }   
-        }
-      }
+      // {
+        // course: "10.020 ISO 9001 Introduction",
+        // relevantUsers: ["Paul"], // Only list users who need to complete it
+        // completionRate: 87.5,
+        // completedUsers: 7,
+        // totalUsers: 8,
+        // userStatus: {
+        //   "Paul": { status: "Not Started", lastAccessed: null }
+        // }
+      // }
       ],
       actions: [
-        "Immediate attention: Paul requires 7 additional courses to meet Executive/Process Owner requirements (14 courses recently completed)",
+        "Paul has achieved 100% completion - all role requirements fulfilled",
         "Josh has achieved 100% completion - all role requirements fulfilled",
-        "Compliance status: 7 of 8 personnel are fully compliant with role-based training requirements",
-        "Auditor readiness: Both J.T. and Chris have completed all required internal auditing courses",
-        "Next 30 days: Focus on completing remaining Executive/Process Owner requirements for Paul"
+        "Compliance status: 8 of 8 personnel are fully compliant with role-based training requirements",
+        "Auditor readiness: Both J.T. and Chris have completed all required internal auditing courses"
       ],
       overallStats: { // Update overall statistics here
         totalCourses: 207,
-        totalCompleted: 200,
+        totalCompleted: 207,
         totalInProgress: 0,
-        totalNotStarted: 7,
-        completionRate: 96.6
+        totalNotStarted: 0,
+        completionRate: 100
       }
     };
 
@@ -1169,7 +1131,7 @@
       if (dashboardData.actions.length > 0) {
         dashboardData.actions.forEach(action => {
           const actionDiv = document.createElement('div');
-          actionDiv.className = 'action-item';
+          actionDiv.className = 'action-item-success';
           actionDiv.textContent = action;
           actionsContainer.appendChild(actionDiv);
         });

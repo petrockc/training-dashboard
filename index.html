@@ -638,13 +638,20 @@
     },
     {
       name: "Bill",
-      roles: ["Executive", "Process Owner", "Document Control", "Basic User"],
-      requiredCourses: 27,
+      roles: ["Executive", "MREP", "Process Owner", "Document Control", "Basic User"],
+      requiredCourses: 33,
       completedRequired: 27,
       totalCompletions: 29,
       inProgress: 0,
-      completionRate: 100,
-      incompleteList: []
+      completionRate: 81.8,
+      incompleteList: [
+        { course: "00.330 Customer Satisfaction (ISO 9001 - AS91009120)", status: "Not Started", lastAccessed: null },
+        { course: "00.300 Internal Auditing", status: "Not Started", lastAccessed: null },
+        { course: "0.310 Internal Auditing – Mock Audits", status: "Not Started", lastAccessed: null },
+        { course: "10.260 Internal Auditing – Where is it Found - 9001", status: "Not Started", lastAccessed: null },
+        { course: "10.280 ISO 9001 Tour", status: "Not Started", lastAccessed: null },
+        { course: "00.320 Preparing for Your Registrar's Audit", status: "Not Started", lastAccessed: null } 
+      ]
     },
     {
       name: "J.T.",
@@ -704,29 +711,49 @@
       incompleteList: user.incompleteList
     })),      
     courses: [
-      // {
-        // course: "10.020 ISO 9001 Introduction",
-        // relevantUsers: ["Paul"], // Only list users who need to complete it
-        // completionRate: 87.5,
-        // completedUsers: 7,
-        // totalUsers: 8,
-        // userStatus: {
-        //   "Paul": { status: "Not Started", lastAccessed: null }
-        // }
-      // }
+      {
+        course: "00.300 Internal Auditing",
+        relevantUsers: ["Bill"], // Only list users who need to complete it
+        completionRate: 66.7,
+        completedUsers: 2,
+        totalUsers: 3,
+        userStatus: {
+          "Bill": { status: "Not Started", lastAccessed: null }
+        }
+      },
+      {
+        course: "00.310 Internal Auditing – Mock Audits",
+        relevantUsers: ["Bill"], // Only list users who need to complete it
+        completionRate: 66.7,
+        completedUsers: 2,
+        totalUsers: 3,
+        userStatus: {
+          "Bill": { status: "Not Started", lastAccessed: null }
+        }
+      },
+      {
+        course: "10.260 Internal Auditing – Where is it Found - 9001",
+        relevantUsers: ["Bill"], // Only list users who need to complete it
+        completionRate: 66.7,
+        completedUsers: 2,
+        totalUsers: 3,
+        userStatus: {
+          "Bill": { status: "Not Started", lastAccessed: null }
+        }
+      }
       ],
       actions: [
-        "Paul has achieved 100% completion - all role requirements fulfilled",
+        "Bill needs to complete 6 MREP role courses",
         "Josh has achieved 100% completion - all role requirements fulfilled",
-        "Compliance status: 8 of 8 personnel are fully compliant with role-based training requirements",
+        "Compliance status: 7 of 8 personnel are fully compliant with role-based training requirements",
         "Auditor readiness: Both J.T. and Chris have completed all required internal auditing courses"
       ],
       overallStats: { // Update overall statistics here
-        totalCourses: 207,
+        totalCourses: 213,
         totalCompleted: 207,
         totalInProgress: 0,
         totalNotStarted: 0,
-        completionRate: 100
+        completionRate: 97.2
       }
     };
 

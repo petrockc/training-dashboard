@@ -743,10 +743,7 @@
       }
       ],
       actions: [
-        "Bill needs to complete 6 MREP role courses",
-        "Josh has achieved 100% completion - all role requirements fulfilled",
-        "Compliance status: 7 of 8 personnel are fully compliant with role-based training requirements",
-        "Auditor readiness: Both J.T. and Chris have completed all required internal auditing courses"
+        "Bill needs to complete 6 MREP role courses"
       ],
       overallStats: { // Update overall statistics here
         totalCourses: 213,
@@ -1158,7 +1155,7 @@
       if (dashboardData.actions.length > 0) {
         dashboardData.actions.forEach(action => {
           const actionDiv = document.createElement('div');
-          actionDiv.className = 'action-item-success';
+          actionDiv.className = 'action-item-warning';
           actionDiv.textContent = action;
           actionsContainer.appendChild(actionDiv);
         });

@@ -640,15 +640,11 @@
       name: "Bill",
       roles: ["Executive", "MREP", "Process Owner", "Document Control", "Basic User"],
       requiredCourses: 33,
-      completedRequired: 27,
-      totalCompletions: 29,
+      completedRequired: 31,
+      totalCompletions: 33,
       inProgress: 0,
-      completionRate: 81.8,
+      completionRate: 93.9,
       incompleteList: [
-        { course: "00.330 Customer Satisfaction (ISO 9001 - AS91009120)", status: "Not Started", lastAccessed: null },
-        { course: "00.300 Internal Auditing", status: "Not Started", lastAccessed: null },
-        { course: "0.310 Internal Auditing – Mock Audits", status: "Not Started", lastAccessed: null },
-        { course: "10.260 Internal Auditing – Where is it Found - 9001", status: "Not Started", lastAccessed: null },
         { course: "10.280 ISO 9001 Tour", status: "Not Started", lastAccessed: null },
         { course: "00.320 Preparing for Your Registrar's Audit", status: "Not Started", lastAccessed: null } 
       ]
@@ -712,7 +708,7 @@
     })),      
     courses: [
       {
-        course: "00.300 Internal Auditing",
+        course: "00.320 Preparing for Your Registrar's Audit",
         relevantUsers: ["Bill"], // Only list users who need to complete it
         completionRate: 66.7,
         completedUsers: 2,
@@ -722,17 +718,7 @@
         }
       },
       {
-        course: "00.310 Internal Auditing – Mock Audits",
-        relevantUsers: ["Bill"], // Only list users who need to complete it
-        completionRate: 66.7,
-        completedUsers: 2,
-        totalUsers: 3,
-        userStatus: {
-          "Bill": { status: "Not Started", lastAccessed: null }
-        }
-      },
-      {
-        course: "10.260 Internal Auditing – Where is it Found - 9001",
+        course: "10.280 ISO 9001 Tour",
         relevantUsers: ["Bill"], // Only list users who need to complete it
         completionRate: 66.7,
         completedUsers: 2,
@@ -743,17 +729,17 @@
       }
       ],
       actions: [
-        "Action required: Bill needs to complete 6 MREP courses for new role assignment",
+        "Action required: Bill needs to complete 2 MREP courses for new role assignment",
         "Compliance status: 7 of 8 personnel are fully compliant with current role-based training requirements", 
-        "MREP transition: Bill is 81.8% complete - 6 courses remaining for full MREP compliance",
+        "MREP transition: Bill is 93.9% complete - 2 courses remaining for full MREP compliance",
         "Auditor readiness: Both J.T. and Chris have completed all required internal auditing courses"
       ],
       overallStats: { // Update overall statistics here
         totalCourses: 213,
-        totalCompleted: 207,
+        totalCompleted: 211,
         totalInProgress: 0,
-        totalNotStarted: 6,
-        completionRate: 97.2
+        totalNotStarted: 2,
+        completionRate: 99.2
       }
     };
 

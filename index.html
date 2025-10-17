@@ -420,7 +420,7 @@
   <div class="container">
     <header class="mb-6">
       <h1>CORE Learning Center Dashboard</h1>
-      <p>Updated on October 9, 2025</p>
+      <p>Updated on October 17, 2025</p>
     </header>
 
     <div class="card mb-6">
@@ -588,7 +588,7 @@
                 <td>00.320 Preparing for your Registrar's Audit</td>
                 <td><span class="badge badge-success">✓ Complete</span></td>
                 <td><span class="badge badge-success">✓ Complete</span></td>
-                <td><span class="badge badge-danger">✕ Incomplete</span></td>
+                <td><span class="badge badge-success">✓ Complete</span></td>
               </tr>              
               <tr>
                 <td>10.260 Internal Auditing_Where is it Found_9001</td>
@@ -600,7 +600,7 @@
                 <td>10.280 ISO 9001 Tour</td>
                 <td><span class="badge badge-success">✓ Complete</span></td>
                 <td><span class="badge badge-success">✓ Complete</span></td>
-                <td><span class="badge badge-danger">✕ Incomplete</span></td>
+                <td><span class="badge badge-success">✓ Complete</span></td>
               </tr>
             </tbody>
           </table>
@@ -646,14 +646,11 @@
       name: "Bill",
       roles: ["Executive", "MREP", "Internal Auditor", "Process Owner", "Document Control", "Basic User"],
       requiredCourses: 33,
-      completedRequired: 31,
-      totalCompletions: 33,
+      completedRequired: 33,
+      totalCompletions: 35,
       inProgress: 0,
-      completionRate: 93.9,
-      incompleteList: [
-        { course: "10.280 ISO 9001 Tour", status: "Not Started", lastAccessed: null },
-        { course: "00.320 Preparing for Your Registrar's Audit", status: "Not Started", lastAccessed: null } 
-      ]
+      completionRate: 100,
+      incompleteList: []
     },
     {
       name: "J.T.",
@@ -713,41 +710,31 @@
       incompleteList: user.incompleteList
     })),      
     courses: [
-      {
-        course: "00.320 Preparing for Your Registrar's Audit",
-        relevantUsers: ["Bill"], // Only list users who need to complete it
-        completionRate: 66.7,
-        completedUsers: 2,
-        totalUsers: 3,
-        userStatus: {
-          "Bill": { status: "Not Started", lastAccessed: null }
-        }
-      },
-      {
-        course: "10.280 ISO 9001 Tour",
-        relevantUsers: ["Bill"], // Only list users who need to complete it
-        completionRate: 66.7,
-        completedUsers: 2,
-        totalUsers: 3,
-        userStatus: {
-          "Bill": { status: "Not Started", lastAccessed: null }
-        }
-      }
-      ],
-      actions: [
-        "Action required: Bill needs to complete 2 MREP courses for new role assignment",
-        "Compliance status: 7 of 8 personnel are fully compliant with current role-based training requirements", 
-        "MREP transition: Bill is 93.9% complete - 2 courses remaining for full MREP compliance",
-        "Auditor readiness: Both J.T. and Chris have completed all required internal auditing courses"
-      ],
-      overallStats: { // Update overall statistics here
+    //  {
+    //    course: "10.280 ISO 9001 Tour",
+    //    relevantUsers: ["Bill"], // Only list users who need to complete it
+    //    completionRate: 66.7,
+    //    completedUsers: 2,
+    //    totalUsers: 3,
+    //    userStatus: {
+    //      "Bill": { status: "Not Started", lastAccessed: null }
+    //    }
+    //  }
+    ],
+    actions: [
+      "Compliance status: 8 of 8 personnel are fully compliant with current role-based training requirements", 
+      "MREP transition: Bill has achieved full MREP compliance",
+      "Auditor readiness: J.T., Chris, and Bill have completed all required internal auditing courses"
+    ],
+      // Update overall statistics here
+    overallStats: {
         totalCourses: 213,
-        totalCompleted: 211,
+        totalCompleted: 213,
         totalInProgress: 0,
-        totalNotStarted: 2,
-        completionRate: 99.2
-      }
-    };
+        totalNotStarted: 0,
+        completionRate: 100
+    }
+  };
 
     // Generate leaderboardData from userData
     const leaderboardData = userData.map(user => ({
@@ -1150,7 +1137,7 @@
       if (dashboardData.actions.length > 0) {
         dashboardData.actions.forEach(action => {
           const actionDiv = document.createElement('div');
-          actionDiv.className = 'action-item'; // yellow for action items, use 'action-item-success' for achievements
+          actionDiv.className = 'action-item-success'; // yellow for action items, use 'action-item-success' for achievements
           actionDiv.textContent = action;
           actionsContainer.appendChild(actionDiv);
         });

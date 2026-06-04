@@ -671,9 +671,6 @@
       inProgress: 0,
       completionRate: 100,
       incompleteList: []
-        // { course: "90.020 Business Impact: Managing Business Risk", status: "Not Started", lastAccessed: null },
-        // { course: "90.030 Business Impact: Management System Planning & Leadership", status: "Not Started", lastAccessed: null },
-        // { course: "90.040 Business Impact: A Culture of Involvement", status: "Not Started", lastAccessed: null }
     },
     {
       name: "Josh",
@@ -735,16 +732,127 @@
       incompleteList: user.incompleteList
     })),      
     courses: [
-    //  {
-    //    course: "10.280 ISO 9001 Tour",
-    //    relevantUsers: ["Bill"], // Only list users who need to complete it
-    //    completionRate: 66.7,
-    //    completedUsers: 2,
-    //    totalUsers: 3,
-    //    userStatus: {
-    //      "Bill": { status: "Not Started", lastAccessed: null }
-    //    }
-    //  }
+      {
+        course: "00.160 Resource Planning",
+        relevantUsers: ["Lilly"],
+        completionRate: 0,
+        completedUsers: 0,
+        totalUsers: 1,
+        userStatus: {
+          "Lilly": { status: "In Progress", lastAccessed: "06/04/26" }
+        }
+      },
+      {
+        course: "00.180 Competency Training and Awareness",
+        relevantUsers: ["Lilly"],
+        completionRate: 0,
+        completedUsers: 0,
+        totalUsers: 1,
+        userStatus: {
+          "Lilly": { status: "Not Started", lastAccessed: null }
+        }
+      },
+      {
+        course: "00.200 Corrective Action",
+        relevantUsers: ["Lilly"],
+        completionRate: 0,
+        completedUsers: 0,
+        totalUsers: 1,
+        userStatus: {
+          "Lilly": { status: "Not Started", lastAccessed: null }
+        }
+      },
+      {
+        course: "00.260 Purchasing",
+        relevantUsers: ["Lilly", "GG"],
+        completionRate: 0,
+        completedUsers: 0,
+        totalUsers: 2,
+        userStatus: {
+          "Lilly": { status: "Not Started", lastAccessed: null },
+          "GG": { status: "Not Started", lastAccessed: null }
+        }
+      },
+      {
+        course: "00.280 Calibration",
+        relevantUsers: ["GG"],
+        completionRate: 0,
+        completedUsers: 0,
+        totalUsers: 1,
+        userStatus: {
+          "GG": { status: "Not Started", lastAccessed: null }
+        }
+      },
+      {
+        course: "00.300 Internal Auditing",
+        relevantUsers: ["GG"],
+        completionRate: 0,
+        completedUsers: 0,
+        totalUsers: 1,
+        userStatus: {
+          "GG": { status: "Not Started", lastAccessed: null }
+        }
+      },
+      {
+        course: "00.310 Internal Auditing_Mock Audits",
+        relevantUsers: ["GG"],
+        completionRate: 0,
+        completedUsers: 0,
+        totalUsers: 1,
+        userStatus: {
+          "GG": { status: "Not Started", lastAccessed: null }
+        }
+      },
+      {
+        course: "00.320 Preparing for your Registrar's Audit",
+        relevantUsers: ["GG"],
+        completionRate: 0,
+        completedUsers: 0,
+        totalUsers: 1,
+        userStatus: {
+          "GG": { status: "Not Started", lastAccessed: null }
+        }
+      },
+      {
+        course: "00.330 Customer Satisfaction (ISO 9001 - AS91009120)",
+        relevantUsers: ["GG"],
+        completionRate: 0,
+        completedUsers: 0,
+        totalUsers: 1,
+        userStatus: {
+          "GG": { status: "Not Started", lastAccessed: null }
+        }
+      },
+      {
+        course: "10.220 Providing Products and Services",
+        relevantUsers: ["GG"],
+        completionRate: 0,
+        completedUsers: 0,
+        totalUsers: 1,
+        userStatus: {
+          "GG": { status: "Not Started", lastAccessed: null }
+        }
+      },
+      {
+        course: "10.260 Internal Auditing_Where is it Found_9001",
+        relevantUsers: ["GG"],
+        completionRate: 0,
+        completedUsers: 0,
+        totalUsers: 1,
+        userStatus: {
+          "GG": { status: "Not Started", lastAccessed: null }
+        }
+      },
+      {
+        course: "100.20 CORE: Using Autoforms",
+        relevantUsers: ["Lilly"],
+        completionRate: 0,
+        completedUsers: 0,
+        totalUsers: 1,
+        userStatus: {
+          "Lilly": { status: "Not Started", lastAccessed: null }
+        }
+      }
     ],
     actions: [
       "Compliance status: 8 of 10 personnel are fully compliant with role-based training requirements",

@@ -420,7 +420,7 @@
   <div class="container">
     <header class="mb-6">
       <h1>CORE Learning Center Dashboard</h1>
-      <p>Updated on October 17, 2025</p>
+      <p>Updated on June 4, 2026</p>
     </header>
 
     <div class="card mb-6">
@@ -568,6 +568,7 @@
                 <th>Course</th>
                 <th>Chris</th>
                 <th>Bill</th>
+                <th>GG</th>
               </tr>
             </thead>
             <tbody>
@@ -575,9 +576,11 @@
                 <td>00.300 Internal Auditing</td>
                 <td><span class="badge badge-success">✓ Complete</span></td>
                 <td><span class="badge badge-success">✓ Complete</span></td>
+                <td><span class="badge badge-success">✓ Complete</span></td>
               </tr>
               <tr>
                 <td>00.310 Internal Auditing_Mock Audits</td>
+                <td><span class="badge badge-success">✓ Complete</span></td>
                 <td><span class="badge badge-success">✓ Complete</span></td>
                 <td><span class="badge badge-success">✓ Complete</span></td>
               </tr>
@@ -585,14 +588,17 @@
                 <td>00.320 Preparing for your Registrar's Audit</td>
                 <td><span class="badge badge-success">✓ Complete</span></td>
                 <td><span class="badge badge-success">✓ Complete</span></td>
+                <td><span class="badge badge-success">✓ Complete</span></td>
               </tr>              
               <tr>
                 <td>10.260 Internal Auditing_Where is it Found_9001</td>
                 <td><span class="badge badge-success">✓ Complete</span></td>
                 <td><span class="badge badge-success">✓ Complete</span></td>
+                <td><span class="badge badge-success">✓ Complete</span></td>
               </tr>
               <tr>
                 <td>10.280 ISO 9001 Tour</td>
+                <td><span class="badge badge-success">✓ Complete</span></td>
                 <td><span class="badge badge-success">✓ Complete</span></td>
                 <td><span class="badge badge-success">✓ Complete</span></td>
               </tr>
@@ -678,7 +684,42 @@
       inProgress: 0,
       completionRate: 100,
       incompleteList: []
-    }
+    },
+    {
+      name: "Lilly",
+      roles: ["Document Control", "Basic User"],
+      requiredCourses: 19,
+      completedRequired: 13,
+      totalCompletions: 13,
+      inProgress: 1,
+      completionRate: 68.4,
+      incompleteList: [
+        { course: "00.160 Resource Planning", status: "In Progress", lastAccessed: "06/04/26" },
+        { course: "00.180 Competency Training and Awareness", status: "Not Started", lastAccessed: null },
+        { course: "00.200 Corrective Action", status: "Not Started", lastAccessed: null },
+        { course: "00.260 Purchasing", status: "Not Started", lastAccessed: null },
+        { course: "100.20 CORE: Using Autoforms", status: "Not Started", lastAccessed: null }
+      ]
+    },
+    {
+      name: "GG",
+      roles: ["MREP", "Internal Auditor", "Document Control", "Basic User"],
+      requiredCourses: 28,
+      completedRequired: 20,
+      totalCompletions: 20,
+      inProgress: 0,
+      completionRate: 71.4,
+      incompleteList: [
+        { course: "00.260 Purchasing", status: "Not Started", lastAccessed: null },
+        { course: "00.280 Calibration", status: "Not Started", lastAccessed: null },
+        { course: "00.300 Internal Auditing", status: "Not Started", lastAccessed: null },
+        { course: "00.310 Internal Auditing_Mock Audits", status: "Not Started", lastAccessed: null },
+        { course: "00.320 Preparing for your Registrar's Audit", status: "Not Started", lastAccessed: null },
+        { course: "00.330 Customer Satisfaction (ISO 9001 - AS91009120)", status: "Not Started", lastAccessed: null },
+        { course: "10.220 Providing Products and Services", status: "Not Started", lastAccessed: null },
+        { course: "10.260 Internal Auditing_Where is it Found_9001", status: "Not Started", lastAccessed: null }
+      ]
+  }    
   ];
 
   // Generate dashboardData from userData
@@ -706,17 +747,19 @@
     //  }
     ],
     actions: [
-      "Full compliance achieved: All 7 personnel have completed 100% of their role-based training requirements",
-      "MREP team certification complete: Chris and Bill have achieved full MREP compliance",
-      "Internal auditor readiness: Chris and Bill have completed all required internal auditing courses"
-    ],
+      "Compliance status: 8 of 10 personnel are fully compliant with role-based training requirements",
+      "Lilly at 68.4% - 5 courses remaining, 1 in progress",
+      "GG at 71.4% - 8 courses remaining",
+      "Bill has achieved MREP certification - all role requirements fulfilled",
+      "Auditor readiness: GG is working toward internal auditing course completion"
+    ]
       // Update overall statistics here
     overallStats: {
-        totalCourses: 213,
-        totalCompleted: 213,
-        totalInProgress: 0,
-        totalNotStarted: 0,
-        completionRate: 100
+        totalCourses: 260,
+        totalCompleted: 246,
+        totalInProgress: 1,
+        totalNotStarted: 13,
+        completionRate: 94.6
     }
   };
 

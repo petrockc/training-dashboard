@@ -855,13 +855,13 @@
       }
     ],
     actions: [
-      "Compliance status: 8 of 10 personnel are fully compliant with role-based training requirements",
-      "Lilly at 68.4% - 5 courses remaining, 1 in progress",
-      "GG at 71.4% - 8 courses remaining",
-      "Bill has achieved MREP certification - all role requirements fulfilled",
-      "Auditor readiness: GG is working toward internal auditing course completion"
+      { type: "action-item-success", text: "Compliance status: 8 of 10 personnel are fully compliant with role-based training requirements" },
+      { type: "action-item-success", text: "Bill has achieved MREP certification - all role requirements fulfilled" },
+      { type: "action-item", text: "Lilly at 68.4% - 5 courses remaining, 1 in progress" },
+      { type: "action-item", text: "GG at 71.4% - 8 courses remaining" },
+      { type: "action-item", text: "Auditor readiness: GG is working toward internal auditing course completion" }
     ],
-      // Update overall statistics here
+    // Update overall statistics here
     overallStats: {
         totalCourses: 260,
         totalCompleted: 246,
@@ -1272,8 +1272,8 @@
       if (dashboardData.actions.length > 0) {
         dashboardData.actions.forEach(action => {
           const actionDiv = document.createElement('div');
-          actionDiv.className = 'action-item-success'; // yellow for action items, use 'action-item-success' for achievements
-          actionDiv.textContent = action;
+          actionDiv.className = action.type;
+          actionDiv.textContent = action.text;
           actionsContainer.appendChild(actionDiv);
         });
       } else {
